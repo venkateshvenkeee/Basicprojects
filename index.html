@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking Cloud</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#messageBox {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+#submitButton{
+    color: red;
+}
+body{
+    background-color: yellow;
+}
+#message{
+    color: blue;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome!</h2>
+        <label for="username">Enter your username:</label>
+        <input type="text" id="username" placeholder="Username">
+        <button id="submitButton">Click Here</button>
+    </div>
+
+    <div class="hidden" id="messageBox">
+        <p id="message">Hello, <span id="usernameDisplay"></span>! Welcome to venky's website my friend.</p>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+    var username = document.getElementById('username').value;
+    if(username.trim() !== '') {
+        document.getElementById('usernameDisplay').textContent = username;
+        document.getElementById('messageBox').style.display = 'block';
+    } else {
+        alert('Please enter a valid username!');
+    }
+});
+    </script>
+</body>
+</html>
